@@ -30,6 +30,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class User extends BaseEntity {
+	
+	@Column(nullable = false)
+	private String userIdentifier;
 
 	@NotNull
 	@Column(nullable = false)
