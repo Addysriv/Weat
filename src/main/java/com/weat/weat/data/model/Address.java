@@ -18,7 +18,9 @@ import lombok.Setter;
 public class Address extends BaseEntity {
 
 	private String addressLine1;
+	
 	private String addressLine2;
+	
 	@Column(length = 100)
 	private String landmark;
 

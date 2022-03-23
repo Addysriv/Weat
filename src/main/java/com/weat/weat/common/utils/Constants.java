@@ -13,4 +13,14 @@ public final class Constants {
 	public static final String DATE_FORMAT_YYYYMMDDT = "yyyy-MM-dd'T'HH:mm:ss";
 	public static final String HTTP_AUTHORIZATION_HEADER = "Authorization";
 	public static final String AUTH_TOKEN = "AUTH-TOKEN";
+	public static final String UI_TIME_FORMAT = "HH:mm";
+	public static final String UI_DATE_FORMAT = "dd-MM-yyyy";
+	public static final String UI_DATE_TIME_FORMAT = "dd-MM-yyyy HH:mm";
+	public static final String INCOMING_UI_DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+	public static final String INCOMING_UI_DATE_FORMAT = "yyyy-MM-dd";
+	public static final String UI_TEXT_FORMAT = "@";
+	public static final String KALEYRA_SMS_PROVIDER= "kaleyra";
+	public static final String DEFAULT_SMS_PROVIDER= "kaleyra";
+	public static final String KALEYRA_EMAIL_PROVIDER= "kaleyra";
+	public static final String DEFAULT_EMAIL_PROVIDER= "KALEYRA_EMAIL_PROVIDER";
 }
