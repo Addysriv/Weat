@@ -1,7 +1,10 @@
 package com.weat.weat.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -24,4 +27,10 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	@Override public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
 		configurer.ignoreAcceptHeader(true).defaultContentType(MediaType.APPLICATION_JSON);
 	}
+	
+	@Bean("encoder")
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
 }

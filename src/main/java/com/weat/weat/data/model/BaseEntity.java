@@ -28,7 +28,7 @@ import lombok.Setter;
 public abstract class BaseEntity {
 
 	@Id
-	@GenericGenerator(name = "UseExistingIdOtherwiseGenerateUsingIdentity", strategy = "com.vivritiamc.userservice.data.model.UseExistingIdOtherwiseGenerateUsingIdentity")
+	@GenericGenerator(name = "UseExistingIdOtherwiseGenerateUsingIdentity", strategy = "com.weat.weat.data.model.UseExistingIdOtherwiseGenerateUsingIdentity")
 	@GeneratedValue(generator = "UseExistingIdOtherwiseGenerateUsingIdentity")
 	protected Long id;
 

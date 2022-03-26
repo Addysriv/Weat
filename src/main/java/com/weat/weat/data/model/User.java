@@ -85,8 +85,8 @@ public class User extends BaseEntity {
 
 	private String password;
 
-	@OneToMany
-	private Address address;
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private Set<Address> address;
 
 	/**
 	 *

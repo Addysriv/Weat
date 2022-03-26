@@ -2,6 +2,8 @@ package com.weat.weat.data.model;
 
 import javax.persistence.Column;
 
+import org.springframework.data.redis.core.RedisHash;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.weat.weat.common.utils.RegistrationStatus;
 
@@ -11,7 +13,7 @@ import lombok.Setter;
 //TODO Later On This needs to be Worked On And Use Redis With TTL 
 @Getter
 @Setter
-//@RedisHash(value = "registration", timeToLive = 2 * 60 * 60)
+@RedisHash(value = "registration", timeToLive = 2 * 60 * 60)
 public class Registration extends BaseEntity {
 
 	// @Indexed

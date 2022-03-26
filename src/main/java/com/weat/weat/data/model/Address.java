@@ -3,8 +3,11 @@ package com.weat.weat.data.model;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -41,4 +44,8 @@ public class Address extends BaseEntity {
 	
 	@Embedded
 	private Location geoLocation;
+	
+	@ManyToOne
+	@JsonIgnore
+	private User user;
 }

@@ -1,6 +1,5 @@
 spring:
-  data:
-   datasource:
+  datasource:
     driver-class-name: org.postgresql.Driver
     url: ${SPRING_POSTGRES_DB_URL:jdbc:postgresql://localhost:5432/weat}
     username: ${SPRING_DATASOURCE_USERNAME:postgres}

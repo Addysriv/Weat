@@ -21,7 +21,7 @@ import com.weat.weat.data.model.Registration;
 import com.weat.weat.data.model.User;
 import com.weat.weat.data.service.PhoneAccountService;
 import com.weat.weat.data.service.RegistrationService;
-import com.weat.weat.repository.RegistrationRedisRepository;
+import com.weat.weat.redis.repository.RedisRegistrationRepository;
 import com.weat.weat.user.service.UserService;
 import com.weat.weat.util.SignupHelper;
 
@@ -31,7 +31,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RegistrationServiceImpl implements RegistrationService {
 
-	private final RegistrationRedisRepository registrationRedisRepository;
+	private final RedisRegistrationRepository registrationRedisRepository;
 	private final UserService userService;
 	private final PhoneAccountService phoneAccountService;
 
