@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -29,9 +28,6 @@ import com.weat.weat.data.dto.UserSession;
 import com.weat.weat.response.ApiResponse;
 
 public class CoreUtil {
-
-	@Value("${app.url}")
-	private static String appurl;
 
 	private CoreUtil() {
 		throw new IllegalStateException("Utility class");

@@ -1,8 +1,8 @@
 package com.weat.weat.data.model;
 
-import java.security.AuthProvider;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -22,13 +22,16 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import com.google.i18n.phonenumbers.Phonenumber;
 import com.weat.weat.common.utils.Constants;
+import com.weat.weat.common.utils.PhoneUtil;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -49,9 +52,6 @@ public class User extends BaseEntity {
 
 	private String lastName;
 
-	@NotNull
-	@Column(nullable = false)
-	private String userName;
 
 	@JsonIgnore
 	private Boolean activated = false;
@@ -101,6 +101,20 @@ public class User extends BaseEntity {
 	public void setPassword(String password) {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		this.password = passwordEncoder.encode(password);
+	}
+	
+	@JsonIgnore
+	public void setPhoneAccount(String phone) {
+		if(StringUtils.isEmpty(phone)) {return;}
+		Phonenumber.PhoneNumber phoneNumber =  PhoneUtil.parse(phone);
+		PhoneAccount phoneAccount = new PhoneAccount(false, this, phoneNumber.getCountryCode(), phoneNumber.getNationalNumber());
+		getAccounts().add(phoneAccount);
+	}
+	
+	public Optional<PhoneAccount> getPhoneAccount(){
+		return accounts.stream().filter(account -> AuthProvider.PHONE.equals(account.getAuthProvider()))
+				.sorted()
+				.map(account -> (PhoneAccount) account).findFirst();
 	}
 
 }

@@ -20,9 +20,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Account extends BaseEntity implements Comparable<Account> {
-	private boolean verified;
-	private boolean primaryAccount;
-	
+	private boolean verified;	
 	private AuthProvider authProvider;
 
 	

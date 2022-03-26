@@ -19,5 +19,8 @@ public class RegistrationDto {
 
 	@JsonIgnore
 	private Long userId;
+	
+	private String jwttoken;
+
 
 }

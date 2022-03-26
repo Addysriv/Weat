@@ -3,6 +3,7 @@ package com.weat.weat.data.model;
 import javax.persistence.Column;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.weat.weat.common.utils.RegistrationStatus;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -27,5 +28,15 @@ public class Registration extends BaseEntity {
 
 	@JsonIgnore
 	private boolean otpVerified = false;
+	
+	
+	private RegistrationStatus registrationStatus;
+	
+	private String firstName;
+	
+	private String lastName;
+	
+	private Long userId;
+	
 
 }

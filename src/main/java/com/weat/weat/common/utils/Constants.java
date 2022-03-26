@@ -23,4 +23,14 @@ public final class Constants {
 	public static final String DEFAULT_SMS_PROVIDER= "kaleyra";
 	public static final String KALEYRA_EMAIL_PROVIDER= "kaleyra";
 	public static final String DEFAULT_EMAIL_PROVIDER= "KALEYRA_EMAIL_PROVIDER";
+	public static final String REGISTRATION_ID= "X_REGISTRATION_ID";
+
+	
+	public static final class Profile {
+		public static final String DEV = "dev";
+		public static final String STAGING = "staging";
+		public static final String LOCAL = "local";
+		public static final String LOADTEST = "loadtest";
+		public static final String TEST = "test";
+	}
 }

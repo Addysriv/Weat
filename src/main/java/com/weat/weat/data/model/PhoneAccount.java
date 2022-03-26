@@ -22,4 +22,11 @@ public class PhoneAccount extends Account {
 	public String getPhoneWithCountryCode() {
 		return "+" + countryCode + phoneNumber;
 	}
+	
+	public PhoneAccount(boolean verified,User user, int countryCode,long phoneNumber) {
+		super(verified,AuthProvider.PHONE,user);
+		this.countryCode =  countryCode;
+		this.phoneNumber = phoneNumber;
+	}
+	
 }
