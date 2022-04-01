@@ -13,8 +13,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.weat.weat.common.utils.BeanUtil;
 import com.weat.weat.data.model.Role;
 import com.weat.weat.data.model.User;
-import com.weat.weat.service.CoreUserService;
-import com.weat.weat.service.impl.CoreUserServiceImpl;
+import com.weat.weat.user.service.UserService;
+import com.weat.weat.user.service.impl.UserServiceImpl;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -59,7 +59,7 @@ public class UserSession implements UserDetails {
 	public static UserSession create(User user) {
 
 		ApplicationContext context = BeanUtil.getAppContext();
-		CoreUserService userService = context.getBean("coreUserServiceImpl", CoreUserServiceImpl.class);
+		UserService userService = context.getBean("userServiceImpl", UserServiceImpl.class);
 		List<GrantedAuthority> authorities = userService.getRoles(user).stream()
 				.map(role -> new SimpleGrantedAuthority(role.getRoleName())).collect(Collectors.toList());
 

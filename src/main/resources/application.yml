@@ -2,11 +2,11 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     url: ${SPRING_POSTGRES_DB_URL:jdbc:postgresql://localhost:5432/weat}
-    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    username: ${SPRING_DATASOURCE_USERNAME:postgresUser}
     password: ${SPRING_DATASOURCE_PASSWORD:postgresql}
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
     show-sql: false
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -19,6 +19,9 @@ spring:
   redis:
     host: ${AUTH_SPRING_REDIS_HOST:localhost}
     port: ${AUTH_SPRING_REDIS_PORT:6379}
+  mvc:
+   pathmatch:
+    matching-strategy: ant-path-matcher
 weat:
        #TODO Move This Code to Common Communication Service when we build the communication service for viviritiamc.       sms:
             otp-sms: '<#> Your OTP is replace_otp to validate your Phone Number.One time use & valid for 2 mins only. Do not share with anyone. WEAT replace_app_hash'
@@ -36,3 +39,5 @@ weat:
             maxOtpGenerationAttempts: ${WEAT_OTP_MAX_OTP_GENERATION_ATTEMPTS:10}
             maxOtpValidationAttempts: ${WEAT_OTP_MAX_OTP_VALIDATION_ATTEMPTS:10}
             maxAttemptsCoolOffInSeconds: ${WEAT_OTP_MAX_ATTEMPTS_COOLOFF_IN_SECONDS:3600}
+resource:
+        authorization: false

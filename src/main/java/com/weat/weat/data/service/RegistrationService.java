@@ -4,6 +4,8 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
+import org.springframework.security.core.userdetails.UserDetails;
+
 import com.weat.weat.data.dto.PhoneNumberDto;
 import com.weat.weat.data.dto.RegistrationDto;
 import com.weat.weat.data.dto.SignUpRequestV5;
@@ -12,7 +14,7 @@ import com.weat.weat.data.model.User;
 
 public interface RegistrationService {
 	
-	User signup(SignUpRequestV5 signupRequest, Map<String,String> headers, String clientIp);
+	UserDetails signup(SignUpRequestV5 signupRequest, Map<String,String> headers, String clientIp);
 
 	Registration fetchRegistration(String regId);
 

@@ -26,4 +26,12 @@ public class SignUpRequestV5 {
 	private String registrationId;
 
 	private Boolean isDetectLocation = true;
+	
+	private String firstName;
+	
+	private String lastName;
+	
+	//comma separated Roles
+	private String roles;
+	
 }

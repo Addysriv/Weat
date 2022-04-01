@@ -24,6 +24,9 @@ public final class Constants {
 	public static final String KALEYRA_EMAIL_PROVIDER= "kaleyra";
 	public static final String DEFAULT_EMAIL_PROVIDER= "KALEYRA_EMAIL_PROVIDER";
 	public static final String REGISTRATION_ID= "X_REGISTRATION_ID";
+	public static final String JWT_SECRET = "JWT_SECRET";
+	public static final String JWT_TOKEN_VALIDITY = "JWT_TOKEN_VALIDITY";
+	public static final String CLIENT_HEADER = "client";
 
 	
 	public static final class Profile {
@@ -32,5 +35,9 @@ public final class Constants {
 		public static final String LOCAL = "local";
 		public static final String LOADTEST = "loadtest";
 		public static final String TEST = "test";
+	}
+	
+	public static final class Client {
+		public static final String WEB = "web";
 	}
 }

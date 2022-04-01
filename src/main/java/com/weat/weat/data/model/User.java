@@ -35,15 +35,17 @@ import com.weat.weat.common.utils.PhoneUtil;
 
 import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "user")
+@Table(name = "weat_user")
 @Getter
 @Setter
+@NoArgsConstructor
 public class User extends BaseEntity {
 
-	@Column(nullable = false)
+	@Column
 	private String userIdentifier;
 
 	@NotNull
@@ -51,7 +53,6 @@ public class User extends BaseEntity {
 	private String firstName;
 
 	private String lastName;
-
 
 	@JsonIgnore
 	private Boolean activated = false;
@@ -69,7 +70,6 @@ public class User extends BaseEntity {
 
 	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JsonIgnore
-	@Setter(AccessLevel.NONE)
 	private Set<Account> accounts = new HashSet<>();
 
 	@ManyToMany(fetch = FetchType.EAGER)
