@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.weat.weat.data.dto.LoginRequest;
-import com.weat.weat.data.dto.LoginResponse;
+import com.weat.weat.response.ApiResponse;
 
 @RequestMapping("/password")
 public interface PasswordV5Controller {
 
 	@PostMapping("/login")
-	ResponseEntity<LoginResponse> passwordLogin(@Valid @RequestBody LoginRequest loginRequest, HttpServletRequest req);
+	ResponseEntity<ApiResponse> passwordLogin(@Valid @RequestBody LoginRequest loginRequest, HttpServletRequest req);
 
 }

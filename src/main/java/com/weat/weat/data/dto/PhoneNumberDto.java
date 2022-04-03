@@ -13,6 +13,9 @@ public class PhoneNumberDto {
 
 	@NotBlank
 	private String phoneNumber;
+	
+	@NotBlank
+	private String password;
 
 	public PhoneNumberDto(String phoneNumber) {
 		this.phoneNumber = phoneNumber;

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(indexes = @Index(name = "ACCOUNT_PHONE_NUMBER_INDEX", columnList = "countryCode,phoneNumber"))
+@AllArgsConstructor
 public class PhoneAccount extends Account {
 	private int countryCode;
 	private long phoneNumber;

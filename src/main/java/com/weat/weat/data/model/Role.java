@@ -5,6 +5,8 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,15 +16,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
 public class Role extends BaseEntity {
 
 	private String roleName;
 
 	private Boolean roleRestricted;
 
-	public Role(String name) {
-		this.roleName = name;
-	}
 
 	@JsonProperty("role")
 	public String getRole() {
